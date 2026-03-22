@@ -197,25 +197,6 @@ index.html
 ```
 
 No build tools required 😎
-
----
-
-## 🔐 Admin Panel Guide
-
-Open:
-
-```
-admin.html
-```
-
-### Steps:
-
-1. Login using Firebase credentials
-2. Add/edit data
-3. Click **Save All Changes**
-
-💡 Changes instantly reflect in chatbot
-
 ---
 
 ## 🧪 Example Queries
