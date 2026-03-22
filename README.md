@@ -87,6 +87,27 @@ This project solves a very real problem:
 
 ---
 
+## 🔐 Admin Access (Demo)
+
+You can test the admin dashboard using the following credentials:
+
+
+Email: demo@xyz.com
+
+Password: demo123
+
+
+👉 Open:
+
+admin.html
+
+
+⚠️ Note:
+- This is a demo account for testing purposes  
+- Do not use in production without proper security rules  
+
+---
+
 ### ☁️ Firebase Integration
 - Firestore database for real-time data  
 - Firebase Authentication for admin login  
