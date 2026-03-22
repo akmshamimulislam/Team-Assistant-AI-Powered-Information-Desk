@@ -1,0 +1,46 @@
+{
+  "courses": [
+    {
+      "name": "Advanced Agentic Coding",
+      "instructor": "Google DeepMind",
+      "description": "A course on building powerful agentic AI systems.",
+      "schedule": "Mondays and Wednesdays, 2 PM - 4 PM"
+    }
+  ],
+  "trackers": [
+    {
+      "name": "Project Tracker",
+      "url": "https://tracker.example.com",
+      "description": "Main task tracking sheet for the team."
+    }
+  ],
+  "deadlines": [
+    {
+      "milestone": "MVP Completion",
+      "date": "2026-02-15",
+      "priority": "High"
+    },
+    {
+      "milestone": "User Testing",
+      "date": "2026-03-01",
+      "priority": "Medium"
+    }
+  ],
+  "templates": [
+    {
+      "name": "PPT Presentation Template",
+      "url": "https://templates.example.com/ppt-v1",
+      "description": "Official team template for all presentations."
+    },
+    {
+      "name": "Report Template",
+      "url": "https://templates.example.com/report-doc",
+      "description": "Standard document format for weekly reports."
+    }
+  ],
+  "class_format": "Sessions are held via Zoom. Recordings are available within 24 hours.",
+  "general_info": {
+    "team_leads": ["Antigravity", "Alpha"],
+    "channel": "#team-ai-chatbot"
+  }
+}
