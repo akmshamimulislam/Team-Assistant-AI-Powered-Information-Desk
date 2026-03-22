@@ -285,5 +285,3 @@ If you like this project:
 > A small tool that solves a big problem.
 
 **Stop asking in groups. Ask the bot. 🤖**
-
-```
