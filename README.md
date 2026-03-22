@@ -218,33 +218,6 @@ admin.html
 
 ---
 
-## 📊 Sample Data Format
-
-```json
-{
-  "courses": [
-    {
-      "name": "Course Name",
-      "instructor": "Instructor Name"
-    }
-  ],
-  "trackers": [
-    {
-      "name": "Tracker Name",
-      "url": "https://link.com"
-    }
-  ],
-  "deadlines": [
-    {
-      "milestone": "Project Submission",
-      "date": "2026-02-15"
-    }
-  ]
-}
-```
-
----
-
 ## 🧪 Example Queries
 
 Try asking:
@@ -255,17 +228,6 @@ Try asking:
 * “course info”
 * “ppt links”
 * “tracker link”
-
----
-
-## 🚀 Future Improvements
-
-* 🤖 AI/NLP integration (ChatGPT API)
-* 🔎 Smart semantic search
-* 📱 Mobile app version
-* 🔔 Notification system
-* 🌍 Multi-language support
-* 📊 Analytics dashboard
 
 ---
 
