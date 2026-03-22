@@ -133,7 +133,7 @@ External   → Google Sheets (CSV API)
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/your-username/team-assistant.git
+git clone https://github.com/akmshamimulislam/-Team-Assistant-AI-Powered-Information-Desk
 cd team-assistant
 ```
 
