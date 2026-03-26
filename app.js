@@ -4,6 +4,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 const chatMessages = document.getElementById('chat-messages');
 const chatForm = document.getElementById('chat-form');
 const userInput = document.getElementById('user-input');
+const clearChatBtn = document.getElementById('clear-chat');
+const quickRepliesContainer = document.getElementById('quick-replies');
 
 let knowledgeBase = null;
 let db = null;
@@ -19,6 +21,7 @@ async function init() {
         db = getFirestore(app);
 
         await refreshKnowledge();
+        renderQuickReplies();
         console.log('Knowledge base loaded from Firestore');
     } catch (error) {
         console.error('Firebase Init Error:', error);
@@ -83,6 +86,22 @@ async function findResponse(query) {
 
     const q = query.toLowerCase();
     let response = "";
+
+    // Greetings
+    if (q === "hi" || q === "hello" || q === "hey") {
+        return "Hello! How can I help you today? You can ask about routines, deadlines, or trackers.";
+    }
+
+    // Help command
+    if (q === "help" || q === "what can you do") {
+        return "I can help you with:\n" +
+            "- **Class Routine**: Try 'today routine' or 'routine 15 Jan'\n" +
+            "- **Deadlines**: Try 'all deadlines' or 'any deadlines due?'\n" +
+            "- **Trackers**: Try 'tracker links' or 'where is the sheet?'\n" +
+            "- **PPTs**: Try 'ppt links' or 'presentation slides'\n" +
+            "- **Courses**: Try 'course info' or 'who is the instructor?'\n" +
+            "- **Class Formats**: Try 'class format' or 'is it on zoom?'";
+    }
 
     // 0. Search Class Routine (Google Sheets Integration)
     if (q.includes("routine") || q.includes("schedule")) {
@@ -272,6 +291,14 @@ async function findResponse(query) {
 }
 
 // UI Handlers
+
+if (clearChatBtn) {
+    clearChatBtn.onclick = () => {
+        chatMessages.innerHTML = '';
+        addMessage('bot', 'Hello! I am your team assistant. I can help you with course details, tracker links, deadlines, and more.');
+    };
+}
+
 chatForm.onsubmit = async (e) => {
     e.preventDefault();
     const query = userInput.value.trim();
@@ -298,6 +325,31 @@ function addMessage(sender, text) {
     chatMessages.appendChild(div);
     chatMessages.scrollTop = chatMessages.scrollHeight;
     return div;
+}
+
+function renderQuickReplies() {
+    const suggestions = [
+        "Today Routine",
+        "All Deadlines",
+        "Course Info",
+        "Tracker Links",
+        "PPT Links",
+        "Help"
+    ];
+
+    if (!quickRepliesContainer) return;
+
+    quickRepliesContainer.innerHTML = '';
+    suggestions.forEach(text => {
+        const chip = document.createElement('div');
+        chip.className = 'reply-chip';
+        chip.innerText = text;
+        chip.onclick = () => {
+            userInput.value = text;
+            chatForm.dispatchEvent(new Event('submit'));
+        };
+        quickRepliesContainer.appendChild(chip);
+    });
 }
 
 init();
